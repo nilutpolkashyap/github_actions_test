@@ -29,3 +29,18 @@ jobs:
       run: |
         cd scripts
         python -m pytest addition.py
+
+    - name: Set up ROS 2
+      uses: ros-tooling/setup-ros@v0.7
+      with:
+        ros-distro: 'humble'  # Adjust to your ROS 2 distro
+
+    - name: Build ROS 2 packages
+      run: |
+        source /opt/ros/$ROS_DISTRO/setup.bash
+        colcon build
+
+    - name: Run tests (optional)
+      run: |
+        source /opt/ros/$ROS_DISTRO/setup.bash
+        colcon test
