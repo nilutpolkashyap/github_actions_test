@@ -12,7 +12,7 @@ COPY . /ros2_ws
 WORKDIR /ros2_ws
 
 # RUN bash test.sh
-RUN . /opt/ros/galactic/setup.bash && colcon build 
+RUN . /opt/ros/humble/setup.bash && colcon build 
     # Clone or copy your ROS 2 packages into the workspace
     # git clone <your_repo_url> src && \
     # Build the ROS 2 packages
